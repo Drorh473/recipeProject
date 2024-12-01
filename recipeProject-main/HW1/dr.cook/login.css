@@ -1,0 +1,62 @@
+/* General body styling */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Card container */
+  form {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Headings */
+  h1 {
+    font-family: 'Pacifico', cursive;
+    color: #d97706; /* Amber 800 */
+    text-align: center;
+  }
+  
+  /* Input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  input:focus {
+    border-color: #d97706;
+    outline: none;
+    box-shadow: 0 0 4px rgba(217, 119, 6, 0.4);
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #d97706;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #b45309; /* Amber 700 */
+  }
+  
+  /* Link */
+  a {
+    color: #d97706;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
