@@ -5,77 +5,56 @@
     <link rel="icon" type="image/png" href="/images/Dr.cook logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Dr.Cook</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-      body {
-        background: linear-gradient(to bottom, #fbbf24, #fef3c7);
-        font-family: Arial, sans-serif;
-      }
-
-      .font-custom {
-        font-family: 'Pacifico', cursive;
-      }
-
-      .logo-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 1rem;
-      }
-
-      .logo-container img {
-        width: 60px;
-        height: auto;
-      }
-
-      button {
-        transition: background-color 0.3s ease;
-      }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   </head>
-  <body class="flex items-center justify-center min-h-screen">
-    <div class="bg-white shadow-md rounded-lg p-8 w-[400px]">
-      <!-- Logo and Text -->
-      <div class="logo-container">
-        <img src="/images/Dr.cook logo.png" alt="Dr.Cook Logo">
-        <span class="text-3xl font-custom text-amber-800">Dr.Cook</span>
+  <body class="bg-amber-50 font-sans">
+    <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="w-full max-w-md">
+        <!-- Logo and Text -->
+        <div class="flex items-center justify-center gap-2.5 mb-6">
+          <img src="/images/Dr.cook logo.png" alt="Dr.Cook Logo" class="w-18 h-12">
+          <span class="text-3xl font-['Pacifico'] text-amber-800">Dr.Cook</span>
+        </div>
+        
+        <form action="#" method="post" class="bg-white shadow-lg rounded-lg p-8 space-y-6">
+          <h1 class="text-3xl font-['Pacifico'] text-center text-amber-800 mb-8">Welcome Back!</h1>
+          
+          <div>
+            <label for="email" class="block text-amber-800 font-medium mb-2">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-2.5 rounded-lg border border-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-800 focus:ring-offset-2 placeholder:text-amber-800/60"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="password" class="block text-amber-800 font-medium mb-2">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              class="w-full px-4 py-2.5 rounded-lg border border-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-800 focus:ring-offset-2 placeholder:text-amber-800/60"
+              required
+            />
+          </div>
+          
+          <button
+            type="submit"
+            class="w-full rounded-full border border-amber-800 text-amber-800 bg-gray-100 p-2.5 hover:bg-amber-50 transition-colors duration-300 text-base cursor-pointer"
+          >
+            Login
+          </button>
+          
+          <p class="text-center text-amber-800 mt-4">
+            Don't have an account? 
+            <a href="/signup.html" class="text-amber-800 font-semibold hover:text-amber-900">Sign up</a>
+          </p>
+        </form>
       </div>
-      <h1 class="text-3xl font-custom text-center text-amber-800 mb-6">Welcome Back!</h1>
-      <form action="#" method="post" class="space-y-4">
-        <div>
-          <label for="email" class="block text-gray-600 font-medium">Email</label>
-          <input
-            id="email"
-            type="email"
-            placeholder="Enter your email"
-            class="w-full px-4 py-2 border rounded-lg border-gray-300 focus:outline-none focus:ring focus:ring-amber-800"
-            required
-          />
-        </div>
-        <div>
-          <label for="password" class="block text-gray-600 font-medium">Password</label>
-          <input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            class="w-full px-4 py-2 border rounded-lg border-gray-300 focus:outline-none focus:ring focus:ring-amber-800"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          class="w-full bg-amber-800 text-white py-2 rounded-lg hover:bg-amber-700"
-        >
-          Login
-        </button>
-      </form>
-      <p class="text-center text-sm text-gray-600 mt-4">
-        Don't have an account? 
-        <a href="/signup.html" class="text-amber-800 underline hover:text-amber-700">Sign up</a>
-      </p>
     </div>
   </body>
 </html>

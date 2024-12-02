@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr.Cook</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Import fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=PT Serif&display=swap');
+      
+      .font-pacifico {
+        font-family: 'Pacifico', cursive;
+      }
+      .font-ptSerif {
+        font-family: 'PT Serif', cursive;
+      }
+    </style>
   </head>
   <body>
     <header class="py-10 bg-amber-800">
@@ -18,7 +30,7 @@
               </svg>
             </button>
             <img class="w-18 h-12 mb-2.5" src="/images/Dr.cook logo.png" alt="Dr.Cook logo">
-            <span class="text-3xl font-custom text-gray-800">
+            <span class="text-3xl font-pacifico text-gray-800">
               Dr.Cook
             </span>
           </div>
@@ -41,30 +53,43 @@
       </div>
     </header>
     <div className="recommended" class="h-25 w-full">
-      <h1 class="text-center text-3xl font-custom text-gray-800 pt-5">
+      <h1 class="text-center text-3xl font-pacifico text-gray-800 pt-5">
         Our Recommended Recipes
       </h1>
     </div>
     <div class="flex justify-center pt-10">
-      <div class ="flex w-[1000px] border border-amber-800 rounded pl-50 bg-gradient-to-t from-amber-700 to-amber-100">
+      <div class ="flex w-[1000px] border border-amber-800 rounded pl-50 bg-[#FFF6E0] shadow-xl">
         <img class="w-90 h-80 pl-0" src="/images/Cheese-Lasagna.jpg" alt="Lasagna">
         <div class="flex flex-col w-full">
           <h2 class="text-xl font-bold text-center">Cheese Lasagna</h2>
-          <p class="text-gray-700 mt-2 ml-2 text-lg">
+          <p class="text-gray-700 mt-2 ml-2 text-lg mb-5 font-ptSerif">
             Enjoy this delicious cheese lasagna made with layers of creamy cheese and rich tomato sauce. Perfect for any occasion!
           </p>
-          <div className="button-container" class="w-full items-start">
-            <button class="absolute bottom-4 right-4 rounded-full border border-amber-800 w-40 h-10 text-amber-800 bg-gray-100 hover:bg-amber-50">To The Full Recipe</button>
+          <span class="flex">
+            <img class="h-12 w-15 pl-5 pb-3" src="/images/clock.png" alt="clock">
+            <span class="ml-4 mt-1 text-lg font-bold">
+              2 Hours
+            </span>
+          </span>
+          <span class="flex">
+            <img class="h-12 w-15 pl-5 pb-3" src="/images/oven.png" alt="oven">
+            <span class="ml-4 mt-1 text-lg font-bold">
+              Oven, Pot
+            </span>
+          </span>
+          <span class="flex">
+            <img class="h-12 w-15 pl-5 pb-3" src="/images/difficulty.png" alt="difficulty">
+            <span class="ml-4 mt-1 text-lg font-bold">
+              Hard
+            </span>
+          </span>
+          <div className="button-container" class="w-full h-full relative">
+            <button class="absolute bottom-5 right-5 rounded-full border border-amber-800 w-40 h-10 text-amber-800 bg-gray-100 hover:bg-amber-50">
+              To The Full Recipe
+            </button>
           </div>
         </div>
       </div>
     </div>
-
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-      .font-custom {
-        font-family: 'Pacifico', cursive;
-      }
-    </style>
   </body>
 </html>
