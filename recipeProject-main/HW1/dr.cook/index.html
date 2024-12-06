@@ -26,13 +26,16 @@
     </style>
     <script src="switch-mode.js" type="module"></script>
     <script src="recommended-recipes.js" type="module"></script>
+    <script src="hamburgerBar.js" type="module"></script>
   </head>
   <body>
     <header class="dark:bg-slate-400 py-10 bg-amber-800">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
-            <button class="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-800">  
+            <button
+              onclick="toggleSideMenu()"  
+              class="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-800" >  
               <svg xmlns="http://www.w3.org/2000/svg" class=" dark:text-gray-900 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />  
               </svg>
@@ -64,6 +67,9 @@
         </div>
       </div>
     </header>
+    <div id="side-menu" 
+         class="dark:bg-slate-400 hidden absolute left-0 top-100% w-72 h-60 bg-[#FFF6E0] text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+    </div>
     <div class="dark:bg-gray-900 h-25 w-full">
       <h1 class="dark:text-white text-center text-3xl font-pacifico text-gray-800 pt-5">
         Our Recommended Recipes
@@ -100,6 +106,6 @@
           container2
       );
     </script>
-    <script src="/auth-ui.js"></script>
+    <!-- <script src="/auth-ui.js"></script> -->
   </body>
 </html>
