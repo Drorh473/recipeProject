@@ -1,7 +1,7 @@
 export const showBox = (text,image) => { // text is an array
     return `
         <div class="flex justify-center pt-10">
-        <div class ="dark:bg-gray-900 dark:border-white flex w-[1000px] border border-amber-800 rounded pl-50 bg-[#FFF6E0] shadow-xl">
+        <div class ="dark:bg-[#2A3236] dark:border-white flex w-[1000px] border border-amber-800 rounded pl-50 bg-[#FFF6E0] shadow-xl">
           <img class="w-[380px] h-[350px] pl-0 object-cover" src="${image}" alt="${text[0]}">
           <div class="flex flex-col w-full">
             <h2 class="dark:text-white text-xl font-bold text-center">${text[0]}</h2>

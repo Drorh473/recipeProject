@@ -35,7 +35,7 @@
           <div class="flex items-center space-x-2">
             <button
               onclick="toggleSideMenu()"  
-              class="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-800" >  
+              class="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2" >  
               <svg xmlns="http://www.w3.org/2000/svg" class=" dark:text-gray-900 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />  
               </svg>
@@ -50,15 +50,15 @@
               <input 
                 type="text" 
                 placeholder="What would you like to cook today?" 
-                class="dark:bg-gray-900 placeholder:dark:text-white dark:text-white text-amber-800 w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 placeholder:text-amber-800">
+                class="dark:bg-[#202124] placeholder:dark:text-white dark:text-white text-amber-800 w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 placeholder:text-amber-800">
               <svg xmlns="http://www.w3.org/2000/svg" class="dark:text-white w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
           </div>
           <div class="flex items-center space-x-4">
-            <button onclick="location.href='/login.html'" class="dark:bg-gray-900 dark:text-white dark:border-white w-[120px] rounded-full border border-amber-800 text-amber-800 bg-gray-100 p-1.5 hover:bg-amber-50">Login</button>
-            <button onclick="location.href='/signup.html'" class="dark:bg-gray-900 dark:text-white dark:border-white w-[120px] rounded-full border border-amber-800 text-amber-800 bg-gray-100 p-1.5 hover:bg-amber-50">SignUp</button>
+            <button onclick="location.href='/login.html'" class="dark:bg-[#202124] dark:text-white dark:border-white w-[120px] rounded-full border border-amber-800 text-amber-800 bg-gray-100 p-1.5 hover:bg-amber-50">Login</button>
+            <button onclick="location.href='/signup.html'" class="dark:bg-[#202124] dark:text-white dark:border-white w-[120px] rounded-full border border-amber-800 text-amber-800 bg-gray-100 p-1.5 hover:bg-amber-50">SignUp</button>
             <div class="flex items-center space-x-2">
               <button onclick="updateMode(this)" class="dark:text-gray-900 pl-3 text-gray-100 hover:text-amber-50">Dark</button>
               <img class="w-5 h-5" src="/images/Dark.png" alt="Dark">
@@ -68,14 +68,14 @@
       </div>
     </header>
     <div id="side-menu" 
-         class="dark:bg-slate-400 hidden absolute left-0 top-100% w-72 h-60 bg-[#FFF6E0] text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+         class="dark:bg-[#2A3236] dark:border dark:border-white hidden absolute border border-amber-800 left-0 top-100% w-72 h-72 bg-[#FFF6E0] text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
     </div>
-    <div class="dark:bg-gray-900 h-25 w-full">
+    <div class="dark:bg-[#202124] h-25 w-full">
       <h1 class="dark:text-white text-center text-3xl font-pacifico text-gray-800 pt-5">
         Our Recommended Recipes
       </h1>
     </div>
-    <div id="recommended-recipe-container1" class="dark:bg-gray-900">
+    <div id="recommended-recipe-container1" class="dark:bg-[#202124]">
       <script type="module">
         const container1 = document.getElementById('recommended-recipe-container1');
         updateBox(
@@ -91,7 +91,7 @@
         );
       </script>
     </div>
-    <div id="recommended-recipe-container2" class="dark:bg-gray-900"></div>
+    <div id="recommended-recipe-container2" class="dark:bg-[#202124]"></div>
     <script type="module">
       const container2 = document.getElementById('recommended-recipe-container2');
       updateBox(
