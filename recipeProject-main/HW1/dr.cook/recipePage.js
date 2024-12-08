@@ -222,7 +222,7 @@ const data = [
     {
         id: "002",
         name: "Classic French Onion Soup",
-        image: "https://example.com/onion-soup.jpg", // Remember to use your own image path
+        image: "https://example.com/onion-soup.jpg",
         description: "Rich and savory caramelized onion soup topped with crusty bread and melted Gruyère cheese. A classic French comfort food perfect for cold days.",
         prepTime: "20 minutes",
         cookTime: "1 hour",

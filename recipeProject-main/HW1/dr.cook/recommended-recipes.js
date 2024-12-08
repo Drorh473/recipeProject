@@ -30,7 +30,7 @@ export const showBox = (text,image) => { // text is an array
               </span>
             </span>
             <div className="button-container" class="w-full h-full relative">
-              <button class="dark:bg-gray-900 dark:text-white dark:border-white absolute bottom-5 right-5 rounded-full border border-amber-800 w-40 h-10 text-amber-800 bg-gray-100 hover:bg-amber-50">
+              <button onclick="location.href='/recipePage.html'" class="dark:bg-gray-900 dark:text-white dark:border-white absolute bottom-5 right-5 rounded-full border border-amber-800 w-40 h-10 text-amber-800 bg-gray-100 hover:bg-amber-50">
                 To The Full Recipe
               </button>
             </div>
