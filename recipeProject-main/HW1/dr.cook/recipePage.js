@@ -1,25 +1,26 @@
 const showRecipe = (element) => {
     return `
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="container mx-auto px-4 py-4 sm:py-8 max-w-4xl">
         <!-- Recipe Header -->
-        <div class="mb-8 text-center">
-            <h1 class="dark:text-white text-3xl font-bold mb-4 text-amber-800">${element.name}</h1>
-            <p class="dark:text-white text-lg mb-4">${element.description}</p>
+        <div class="mb-6 sm:mb-8 text-center">
+            <h1 class="dark:text-white text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-amber-800">${element.name}</h1>
+            <p class="dark:text-white text-base sm:text-lg mb-4 px-2">${element.description}</p>
             
-            <div class="flex flex-wrap justify-center gap-4 text-sm mb-6">
+            <!-- Time and Servings Info -->
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm mb-4 sm:mb-6">
                 <div class="flex items-center gap-2">
-                    <img class="dark:hidden h-6 w-11 pl-5" src="/images/DarkClock.png" alt="DarkClock">
-                    <img class="hidden dark:block h-6 w-11 pl-5" src="/images/LightClock.png" alt="LightClock">
+                    <img class="dark:hidden h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/DarkClock.png" alt="DarkClock">
+                    <img class="hidden dark:block h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/LightClock.png" alt="LightClock">
                     <span class="dark:text-white text-sm">Prep: ${element.prepTime}</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img class="dark:hidden h-6 w-11 pl-5" src="/images/DarkClock.png" alt="DarkClock">
-                    <img class="hidden dark:block h-6 w-11 pl-5" src="/images/LightClock.png" alt="LightClock">
+                    <img class="dark:hidden h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/DarkClock.png" alt="DarkClock">
+                    <img class="hidden dark:block h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/LightClock.png" alt="LightClock">
                     <span class="dark:text-white text-sm">Cook: ${element.cookTime}</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img class="dark:hidden h-6 w-11 pl-5" src="/images/WhiteServing.png" alt="White Serving">
-                    <img class="hidden dark:block h-6 w-11 pl-5" src="/images/BlackServing.png" alt="Black Serving">
+                    <img class="dark:hidden h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/WhiteServing.png" alt="White Serving">
+                    <img class="hidden dark:block h-5 sm:h-6 w-9 sm:w-11 pl-3 sm:pl-5" src="/images/BlackServing.png" alt="Black Serving">
                     <span class="dark:text-white text-sm">Servings: ${element.servings}</span>
                 </div>
             </div>
@@ -30,29 +31,29 @@ const showRecipe = (element) => {
             </div>
         </div>
 
-        <!-- Recipe Image -->
-        <div class="mb-8 flex items-start space-x-6">
-            <span>
-                <img src="${element.image}" alt="${element.name}" class="w-full max-w-2xl rounded-lg shadow-lg">
-            </span>
-            <span class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-6 rounded-lg">
-                <h2 class="dark:text-slate-400 text-xl font-bold mb-4 text-amber-800">Nutrition</h2>
-                <ul class="space-y-2 text-lg">
+        <!-- Recipe Image and Nutrition -->
+        <div class="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-start sm:space-x-6 space-y-4 sm:space-y-0">
+            <div class="w-full sm:w-2/3">
+                <img src="${element.image}" alt="${element.name}" class="w-full rounded-lg shadow-lg">
+            </div>
+            <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-4 sm:p-6 rounded-lg w-full sm:w-1/3">
+                <h2 class="dark:text-slate-400 text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-amber-800">Nutrition</h2>
+                <ul class="space-y-1 sm:space-y-2 text-base sm:text-lg">
                     <li class="dark:text-white"><strong class="dark:text-white">Calories:</strong> ${element.nutrition.calories}</li>
                     <li class="dark:text-white"><strong class="dark:text-white">Protein:</strong> ${element.nutrition.protein}</li>
                     <li class="dark:text-white"><strong class="dark:text-white">Fat:</strong> ${element.nutrition.fat}</li>
                     <li class="dark:text-white"><strong class="dark:text-white">Fiber:</strong> ${element.nutrition.fiber}</li>
                     <li class="dark:text-white"><strong class="dark:text-white">Sugar:</strong> ${element.nutrition.sugar}</li>
                 </ul>
-            </span>
+            </div>
         </div>
 
         <!-- Ingredients -->
-        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-6 rounded-lg mb-8">
-            <h2 class="dark:text-slate-400 text-xl font-bold mb-4 text-amber-800">Ingredients</h2>
+        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
+            <h2 class="dark:text-slate-400 text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-amber-800">Ingredients</h2>
             <ul class="dark:text-white space-y-2">
                 ${element.ingredients.map(ing => `
-                    <li class="flex text-lg justify-between">
+                    <li class="flex text-base sm:text-lg justify-between">
                         <span>${ing.item}</span>
                         <span>${ing.amount} ${ing.unit}</span>
                     </li>
@@ -61,11 +62,11 @@ const showRecipe = (element) => {
         </div>
 
         <!-- Instructions -->
-        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-6 rounded-lg mb-8">
-            <h2 class="dark:text-slate-400 text-xl font-bold mb-4 text-amber-800">Instructions</h2>
-            <ol class="dark:text-white space-y-4">
+        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
+            <h2 class="dark:text-slate-400 text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-amber-800">Instructions</h2>
+            <ol class="dark:text-white space-y-3 sm:space-y-4">
                 ${element.instructions.map(inst => `
-                    <li class="flex gap-4">
+                    <li class="flex gap-3 sm:gap-4 text-base sm:text-lg">
                         <span class="dark:text-slate-400 font-bold text-amber-800">${inst.step}.</span>
                         <span>${inst.text}</span>
                     </li>
@@ -74,28 +75,27 @@ const showRecipe = (element) => {
         </div>
 
         <!-- Tips -->
-        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-6 rounded-lg">
-            <h2 class="dark:text-slate-400 text-xl font-bold mb-4 text-amber-800">Tips</h2>
-            <ul class="dark:text-white list-disc list-inside space-y-2">
+        <div class="dark:bg-[#2A3236] bg-[#FFF6E0] border border-amber-800 dark:border-white p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
+            <h2 class="dark:text-slate-400 text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-amber-800">Tips</h2>
+            <ul class="dark:text-white list-disc list-inside space-y-2 text-base sm:text-lg">
                 ${element.tips.map(tip => `
                     <li>${tip}</li>
                 `).join('')}
             </ul>
         </div>
 
-         <!-- User Rating -->
-        <div class="p-6 text-center">
-            <h2 class="dark:text-slate-400 text-xl font-bold mb-4 text-amber-800">Rate this Recipe</h2>
+        <!-- User Rating -->
+        <div class="p-4 sm:p-6 text-center">
+            <h2 class="dark:text-slate-400 text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-amber-800">Rate this Recipe</h2>
             <div class="flex justify-center items-center gap-2">
                 ${[1, 2, 3, 4, 5].map(star => `
-                    <span class="dark:text-white text-3xl cursor-pointer" onclick="document.getElementById('rating-feedback').textContent = 'Thank you for rating ${star} stars!';">
+                    <span class="dark:text-white text-2xl sm:text-3xl cursor-pointer" onclick="document.getElementById('rating-feedback').textContent = 'Thank you for rating ${star} stars!';">
                         ★
                     </span>
                 `).join('')}
             </div>
         </div>
-        <!-- print the rating at the end -->
-        <div id="rating-feedback" class="dark:text-white text-amber-800 text-xl font-bold text-center mb-5"></div>
+        <div id="rating-feedback" class="dark:text-white text-amber-800 text-lg sm:text-xl font-bold text-center mb-4 sm:mb-5"></div>
     </div>`;
 };
 
@@ -103,7 +103,7 @@ const showRecipe = (element) => {
 const data = [
     {
         id: "001",
-        name: "Classic Cheese Lasagna",
+        name: "Cheese Lasagna",
         image: "/images/Cheese-Lasagna.jpg",
         description: "Rich and creamy homemade lasagna layered with three types of cheese, hearty marinara sauce, and perfectly cooked pasta sheets",
         prepTime: "30 minutes",
@@ -221,8 +221,8 @@ const data = [
     },
     {
         id: "002",
-        name: "Classic French Onion Soup",
-        image: "https://example.com/onion-soup.jpg",
+        name: "Onion Soup",
+        image: "/images/Onion-Soup.jpg",
         description: "Rich and savory caramelized onion soup topped with crusty bread and melted Gruyère cheese. A classic French comfort food perfect for cold days.",
         prepTime: "20 minutes",
         cookTime: "1 hour",
@@ -359,6 +359,7 @@ const data = [
 export function updateRecipe(text, container){
     let newHTML = '';
     let found = false;
+    console.log(text);
     data.forEach(element => {
         if(element.name === text){
             newHTML = showRecipe(element);

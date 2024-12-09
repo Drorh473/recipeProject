@@ -1,12 +1,21 @@
 
 export const switchMode = (currentMode) => {
     const switchTo = currentMode === 'Dark' ? 'Light' : 'Dark';
-    return `
+    if(window.location.pathname === '/')
+        return `
             <div class="flex items-center space-x-2">
-                <button onclick="updateMode(this)" class="dark:text-gray-900 pl-3 text-gray-100 hover:text-amber-50 ">${switchTo}</button>
+                <button onclick="updateMode(this)" class="dark:text-white pl-3 text-black ">${switchTo}</button>
                 <img class="w-5 h-5" src="/images/${switchTo}.png" alt="${switchTo}">
             </div>
-        `;
+         `;
+    else{
+        return `
+        <div class="flex items-center space-x-2">
+            <button onclick="updateMode(this)" class="dark:text-white pl-3 text-black ">${switchTo}</button>
+            <img class="w-5 h-5" src="/images/${switchTo}.png" alt="${switchTo}">
+        </div>
+     `;
+    }
 };
 
 function updateMode(buttonElement) {

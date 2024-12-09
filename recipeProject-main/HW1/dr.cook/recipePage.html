@@ -36,9 +36,18 @@
     </div>
     <div id="container-for-recipe" class="dark:bg-[#202124]"></div>
     <script type="module">
-        import { updateRecipe } from './recipePage.js';
-        const container2 = document.getElementById('container-for-recipe');
-        updateRecipe('Classic Cheese Lasagna', container2);
-    </script>
+      import { updateRecipe } from './recipePage.js';
+      document.addEventListener('DOMContentLoaded', function() {
+          const container2 = document.getElementById('container-for-recipe');
+          const recipeName = localStorage.getItem('selectedRecipe');
+          console.log('Retrieved recipe name:', recipeName);
+          if (recipeName) {
+              updateRecipe(recipeName, container2);
+              localStorage.removeItem('selectedRecipe');
+          } else {
+              console.log('No recipe name found in localStorage');
+          }
+      });
+  </script>
 </body>
 </html>
