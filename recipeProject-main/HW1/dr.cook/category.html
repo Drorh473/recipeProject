@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if (localStorage.getItem('darkMode') === 'dark') {
+            document.documentElement.classList.remove('light');        
+            document.documentElement.classList.add('dark');      
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/Dr.cook logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr.Cook - Categories</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT Serif&display=swap');
+        
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .font-ptSerif {
+            font-family: 'PT Serif', cursive;
+        }
+    </style>
+    <script src="switch-mode.js" type="module"></script>
+    <script src="hamburgerBar.js" type="module"></script>
+    <script src="header.js" type="module"></script>
+</head>
+<body>
+    <header id="header-container" class="dark:bg-slate-400 py-10 bg-amber-800">
+        <script type="module">
+            import { showHeader } from './header.js';
+            const container = document.getElementById('header-container');
+            showHeader(container);
+        </script>
+    </header>
+    <div id="side-menu" 
+         class="dark:bg-[#2A3236] dark:border dark:border-white 
+         hidden fixed border border-amber-800 
+         left-0 top-100% w-72 h-[calc(100vh-88px)] 
+         bg-[#FFF6E0] text-white shadow-lg 
+         transform -translate-x-full transition-transform duration-300 
+         z-50">
+    </div>
+    <div id="category-container" class="min-h-screen">
+        <script type="module">
+            import { showRecipesByCategory } from './categoryPage.js';
+            document.addEventListener('DOMContentLoaded', function() {
+                const container = document.getElementById('category-container');
+                const category = localStorage.getItem('selectedCategory');
+                if (category) {
+                    showRecipesByCategory(category, container);
+                    localStorage.removeItem('selectedCategory');
+                }
+            });
+        </script>
+    </div>
+</body>
+</html> 

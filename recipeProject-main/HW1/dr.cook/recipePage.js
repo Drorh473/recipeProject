@@ -356,6 +356,18 @@ const data = [
     }
 ];
 
+export function getAllCategories() {
+    const categoriesSet = new Set();
+    data.forEach(recipe => {
+        recipe.categories.forEach(category => {
+            categoriesSet.add(category);
+        });
+    });
+    return Array.from(categoriesSet);
+}
+
+export { data };
+
 export function updateRecipe(text, container){
     let newHTML = '';
     let found = false;
