@@ -16,7 +16,7 @@ const headerContext = () => {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />
               </svg>
             </button>
-            <img class="w-12 h-12" src="/images/Dr.cook logo.png" alt="Dr.Cook logo">
+            <img class="w-16 h-12" src="/images/Dr.cook logo.png" alt="Dr.Cook logo">
             <span class="dark:text-gray-900 text-3xl font-pacifico text-white">
               Dr.Cook
             </span>
@@ -54,7 +54,6 @@ const headerContext = () => {
           </div>
           <div class="flex items-center space-x-2">
             <button onclick="updateMode(this)" class="dark:text-gray-900 pl-3 text-gray-100 hover:text-amber-50">${buttonText}</button>
-            <img class="w-5 h-5" src="/images/${buttonText}.png" alt="${buttonText}">
           </div>
         </div>
       </div>

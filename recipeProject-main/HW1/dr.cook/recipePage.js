@@ -3,7 +3,7 @@ const showRecipe = (element) => {
     return `
     <div class="container mx-auto px-4 py-4 sm:py-8 max-w-4xl">
         <!-- Recipe Header -->
-        <div class="mb-6 sm:mb-8 text-center">
+        <div class="mb-6 text-center">
             <h1 class="dark:text-white text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-amber-800">${element.name}</h1>
             <p class="dark:text-white text-base sm:text-lg mb-4 px-2">${element.description}</p>
             

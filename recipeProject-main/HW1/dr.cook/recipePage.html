@@ -26,6 +26,7 @@
 </head>
 <body>
     <header id="header-container" class="dark:bg-slate-400 py-10 bg-amber-800">
+      <!-- use header.js to display the header in recipe page-->
       <script type="module">
         import { showHeader } from './header.js';
         const container = document.getElementById('header-container');
@@ -40,7 +41,7 @@
          transform -translate-x-full transition-transform duration-300 
          z-50">
     </div>
-    <div id="container-for-recipe" class="dark:bg-[#202124]"></div>
+    <div id="container-for-recipe" class="dark:bg-[#202124] pt-40 sm:pt-32 md:pt-0 lg:pt-0"></div>
     <script type="module">
       import { updateRecipe } from './recipePage.js';
       document.addEventListener('DOMContentLoaded', function() {

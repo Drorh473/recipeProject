@@ -1,10 +1,10 @@
 export const showBox = (text,image) => { // text is an array
-  const boxId = `recipe-box-${text[0].replace(/\s+/g, '-')}`;
+  const boxId = `recipe-box-${text[0].replace(/\s+/g, '-')}`; // Regular expression to replace signs like spaces/tabs to "-"
   return `
   <div class="flex justify-center pt-4 sm:pt-6 md:pt-10 px-4 sm:px-6">
       <div class="dark:bg-[#2A3236] dark:border-white flex flex-col sm:flex-row w-full max-w-[1000px] border border-amber-800 rounded bg-[#FFF6E0] shadow-xl">
           <!-- Image Container -->
-          <img class="w-full  md:h-[400px] lg:h-[395px] sm:w-[380px] h-[340px] sm:h-[480px] object-cover" src="${image}" alt="${text[0]}">
+          <img class="w-full md:h-[425px] lg:h-[395px] sm:w-[380px] h-[340px] sm:h-[520px] object-cover" src="${image}" alt="${text[0]}">
           
           <!-- Content Container -->
           <div class="flex flex-col w-full p-4 sm:p-6">
@@ -16,24 +16,24 @@ export const showBox = (text,image) => { // text is an array
               <!-- Icons and Info -->
               <div class="space-y-2 sm:space-y-3">
                   <span class="flex items-center">
-                      <img class="dark:hidden lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/DarkClock.png" alt="DarkClock">
-                      <img class="hidden dark:block lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/LightClock.png" alt="LightClock">
+                      <img class="dark:hidden lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm:pb-3" src="/images/DarkClock.png" alt="DarkClock">
+                      <img class="hidden dark:block lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm: pb-2 sm:pb-3" src="/images/LightClock.png" alt="LightClock">
                       <span class="dark:text-white ml-2 sm:ml-4 text-base sm:text-lg font-bold">
                           ${text[2]}
                       </span>
                   </span>
                   
                   <span class="flex items-center">
-                      <img class="dark:hidden lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/BlackOven.png" alt="BlackOven">
-                      <img class="hidden dark:block lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/WhiteOven.png" alt="WhiteOven">
+                      <img class="dark:hidden lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm:pb-3" src="/images/BlackOven.png" alt="BlackOven">
+                      <img class="hidden dark:block lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm: pb-2 sm:pb-3" src="/images/WhiteOven.png" alt="WhiteOven">
                       <span class="dark:text-white ml-2 sm:ml-4 text-base sm:text-lg font-bold">
                           ${text[3]}
                       </span>
                   </span>
                   
                   <span class="flex items-center">
-                      <img class="dark:hidden lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/BlackDifficulty.png" alt="BlackDifficulty">
-                      <img class="hidden dark:block lg:h-12 lg:w-12 md:h-10 md:w-10 h-8 sm:pl-5 sm:h-10 w-8 sm:w-10 pl-2 sm: pb-2 sm:pb-3" src="/images/WhiteDifficulty.png" alt="Whiteifficulty">
+                      <img class="dark:hidden lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm: pb-2 sm:pb-3" src="/images/BlackDifficulty.png" alt="BlackDifficulty">
+                      <img class="hidden dark:block lg:h-10 lg:w-12 md:h-10 md:w-12 h-8 sm:pl-5 sm:h-10 w-8 sm:w-12 pl-2 sm: pb-2 sm:pb-3" src="/images/WhiteDifficulty.png" alt="Whiteifficulty">
                       <span class="dark:text-white ml-2 sm:ml-4 text-base sm:text-lg font-bold">
                           ${text[4]}
                       </span>
@@ -59,15 +59,11 @@ export const showBox = (text,image) => { // text is an array
 export function updateBox(text, image, container){
   const newHTML = showBox(text, image);
   container.innerHTML = newHTML;
-  
-  // Add the event listener here, after the HTML is updated
   const button = container.querySelector('.recipe-button');
   if (button) {
       button.addEventListener('click', function() {
           const recipeName = this.dataset.recipe;
-          console.log('Setting recipe:', recipeName);
           localStorage.setItem('selectedRecipe', recipeName);
-          console.log('Stored recipe:', localStorage.getItem('selectedRecipe'));
           window.location.href = '/recipePage.html';
       });
   }

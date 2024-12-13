@@ -5,12 +5,9 @@ export function showRecipesByCategory(category, container) {
         recipe.categories.some(cat => cat.toLowerCase() === category.toLowerCase())
     );
     
-    console.log('Category:', category);
-    console.log('Found recipes:', recipes);
-    
     let html = `
     <div class="dark:bg-[#202124] h-25 w-full">
-        <h1 class="dark:text-white text-center text-3xl font-pacifico text-gray-800 pt-5">
+        <h1 class="dark:text-white text-center text-3xl font-pacifico text-gray-800 pt-44 sm:pt-40 md:pt-2 lg:pt-2">
             ${category} Recipes
         </h1>
     </div>`;
