@@ -1,3 +1,4 @@
+// show all the data of the recipe via HTML
 const showRecipe = (element) => {
     return `
     <div class="container mx-auto px-4 py-4 sm:py-8 max-w-4xl">
@@ -95,11 +96,12 @@ const showRecipe = (element) => {
                 `).join('')}
             </div>
         </div>
+        <!-- save space to display the user the rating he voted for the recipe -->
         <div id="rating-feedback" class="dark:text-white text-amber-800 text-lg sm:text-xl font-bold text-center mb-4 sm:mb-5"></div>
     </div>`;
 };
 
-
+// save data about 2 recipes for now, including all the description about them
 const data = [
     {
         id: "001",

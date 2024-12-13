@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- script section for the dark-light mode check-->
     <script>
       if (localStorage.getItem('darkMode') === 'dark') {
         document.documentElement.classList.remove('light');        
@@ -24,6 +25,7 @@
         font-family: 'PT Serif', cursive;
       }
     </style>
+    <!-- call all needed js files to use their funtions-->
     <script src="switch-mode.js" type="module"></script>
     <script src="recommended-recipes.js" type="module"></script>
     <script src="hamburgerBar.js" type="module"></script>
@@ -31,6 +33,7 @@
   </head>
   <body>
     <header id="header-container" class="dark:bg-slate-400 py-10 bg-amber-800">
+      <!-- use header.js to display the header in main page-->
       <script type="module">
         import { showHeader } from './header.js';
         const container = document.getElementById('header-container');
@@ -46,10 +49,12 @@
          z-50">
     </div>
     <div class="dark:bg-[#202124] h-25 w-full">
+      <!-- use the imported font for h1-->
       <h1 class="dark:text-white text-center text-3xl font-pacifico text-gray-800 pt-5">
         Our Recommended Recipes
       </h1>
     </div>
+    <!-- section of recommended recipes, should change from time to time using DB -->
     <div id="recommended-recipe-container1" class="dark:bg-[#202124]">
       <script type="module">
         const container1 = document.getElementById('recommended-recipe-container1');
@@ -81,6 +86,6 @@
           container2
       );
     </script>
-    <!-- <script src="/auth-ui.js"></script> -->
+    <script src="/auth-ui.js"></script>
   </body>
 </html>

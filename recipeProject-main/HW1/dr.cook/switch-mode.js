@@ -67,21 +67,21 @@ function updateMode(button) {
 }
 
 // Initialize mode on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const isDarkMode = localStorage.getItem('darkMode') === 'dark';
-    const modeButton = document.querySelector('[onclick="updateMode(this)"]');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const isDarkMode = localStorage.getItem('darkMode') === 'dark';
+//     const modeButton = document.querySelector('[onclick="updateMode(this)"]');
     
-    if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-        if (modeButton) {
-            modeButton.textContent = 'Light';
-        }
-    } else {
-        document.documentElement.classList.remove('dark');
-        if (modeButton) {
-            modeButton.textContent = 'Dark';
-        }
-    }
-});
+//     if (isDarkMode) {
+//         document.documentElement.classList.add('dark');
+//         if (modeButton) {
+//             modeButton.textContent = 'Light';
+//         }
+//     } else {
+//         document.documentElement.classList.remove('dark');
+//         if (modeButton) {
+//             modeButton.textContent = 'Dark';
+//         }
+//     }
+// });
 
 window.updateMode = updateMode;
